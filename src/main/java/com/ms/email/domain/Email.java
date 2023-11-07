@@ -1,5 +1,6 @@
 package com.ms.email.domain;
 
+import com.ms.email.enums.StatusEmail;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -26,17 +27,25 @@ public class Email implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID idEmail;
 
+    @Column(name = "id_user")
     private UUID idUser;
 
+    @Column(name = "email_from")
     private String emailFrom;
 
+    @Column(name = "email_to")
     private String emailTo;
 
+    @Column(name = "subject")
     private String subject;
 
+    @Column(columnDefinition = "TEXT", name = "id_user")
     private String text;
 
+    @Column(name = "send_data_email")
     private LocalDateTime sendDataEmail;
 
+    @Enumerated(EnumType.ORDINAL)
+    @Column(name = "status_email")
     private StatusEmail statusEmail;
 }
