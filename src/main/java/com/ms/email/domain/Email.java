@@ -39,7 +39,7 @@ public class Email implements Serializable {
     @Column(name = "subject")
     private String subject;
 
-    @Column(columnDefinition = "TEXT", name = "id_user")
+    @Column(columnDefinition = "TEXT", name = "text_email")
     private String text;
 
     @Column(name = "send_data_email")
